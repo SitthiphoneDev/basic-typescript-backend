@@ -14,7 +14,7 @@ const options = {
                 description: 'Development server',
             },
             {
-                url: 'https://ecommerce-app-hv1l.onrender.com',  // Your Render URL
+                url: 'https://api-ecommerce-9tv0.onrender.com',
                 description: 'Production server',
             }
         ],
