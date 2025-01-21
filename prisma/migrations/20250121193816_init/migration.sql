@@ -33,15 +33,6 @@ CREATE TABLE "Unit" (
     CONSTRAINT "Unit_pkey" PRIMARY KEY ("unit_id")
 );
 
--- CreateIndex
-CREATE UNIQUE INDEX "Product_product_id_key" ON "Product"("product_id");
-
--- CreateIndex
-CREATE UNIQUE INDEX "Category_category_id_key" ON "Category"("category_id");
-
--- CreateIndex
-CREATE UNIQUE INDEX "Unit_unit_id_key" ON "Unit"("unit_id");
-
 -- AddForeignKey
 ALTER TABLE "Product" ADD CONSTRAINT "Product_category_id_fkey" FOREIGN KEY ("category_id") REFERENCES "Category"("category_id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
