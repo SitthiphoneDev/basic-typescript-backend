@@ -11,3 +11,9 @@ services:
           property: connectionString
       - key: NODE_ENV
         value: production
+    buildFilter:
+      paths:
+        - prisma/**
+        - src/**
+        - package.json
+        - tsconfig.json
