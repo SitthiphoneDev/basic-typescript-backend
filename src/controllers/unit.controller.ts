@@ -9,7 +9,6 @@ export const unitController = {
     try {
       const data = req.body;
       let result;
-
       if (Array.isArray(data)) {
         // Bulk create
         result = await prisma.$transaction(
@@ -30,7 +29,10 @@ export const unitController = {
         });
       }
 
-      res.status(201).json(result);
+      res.status(201).json({
+        message: 'Unit created successfully',
+        result: result
+      });
     } catch (error) {
       console.error('Error creating unit:', error);
       res.status(500).json({ error: 'Error creating unit' });
@@ -100,6 +102,7 @@ export const unitController = {
           unit_id: Number(id),
         },
       });
+
       res.status(200).send({
         message: 'Unit deleted successfully',
       });

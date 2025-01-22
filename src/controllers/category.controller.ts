@@ -30,7 +30,10 @@ export const categoryController = {
         });
       }
 
-      res.status(201).json(result);
+      res.status(201).json({
+        message: 'Category created successfully',
+        result: result
+      });
     } catch (error) {
       console.error('Error creating category:', error);
       res.status(500).json({ error: 'Error creating category' });
@@ -92,7 +95,10 @@ export const categoryController = {
         }
       });
       
-      res.json(category);
+      res.json({
+        message: 'Category updated successfully',
+        result: category
+      });
     } catch (error) {
       res.status(500).json({ error: 'Error updating category' });
     }
@@ -107,7 +113,9 @@ export const categoryController = {
           category_id: Number(id)
         }
       });
-      res.status(204).send();
+      res.status(200).send({
+        message: 'Category deleted successfully'
+      });
     } catch (error) {
       res.status(500).json({ error: 'Error deleting category' });
     }
