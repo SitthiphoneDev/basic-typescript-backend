@@ -46,6 +46,9 @@ export const unitController = {
         include: {
           product: true,
         },
+        orderBy: {
+          createdAt: 'desc'
+        }
       });
       res.json(units);
     } catch (error) {
